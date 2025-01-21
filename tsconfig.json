@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES2020", 
+        "module": "CommonJS", 
+        "esModuleInterop": true,
+        "declaration": false,  
+        "outDir": "./dist/cjs", 
+        "strict": true ,
+        "moduleResolution": "node",
+    },
+    "include": ["unrolled-linkedlist.ts"],
+}
