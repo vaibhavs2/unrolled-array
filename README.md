@@ -42,6 +42,9 @@ list.insert(1, 15);
 // Delete an element at a specific index
 list.delete(2);
 
+// replace an element at index
+list.replace(0, 24)
+
 // Traverse through the list
 list.loopOver((data, index) => {
   console.log(`Index ${index}: ${data}`);

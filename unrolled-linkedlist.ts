@@ -318,6 +318,19 @@ export class UnrolledLinkedlist<T> {
   //     } while (head != this.lastBlock.next);
   //   }
 
+  private _getNode(index: number) {
+    let { blockIndex, nodeIndex } = this._getIndices(index);
+    const block = this._getBlockByIndex(blockIndex);
+    if (block.length <= nodeIndex) {
+      throw new Error("Index out of bound");
+    }
+    let tHead = block.listLastNode!.next;
+    while (nodeIndex--) {
+      tHead = tHead.next;
+    }
+    return tHead;
+  }
+
   /**
    * Retrieves the element at the specified index in the unrolled linked list.
    *
@@ -329,16 +342,7 @@ export class UnrolledLinkedlist<T> {
    * This method traverses the appropriate block and node to return the data at the given index.
    */
   get(index: number) {
-    let { blockIndex, nodeIndex } = this._getIndices(index);
-    const block = this._getBlockByIndex(blockIndex);
-    if (block.length <= nodeIndex) {
-      throw new Error("Index out of bound");
-    }
-    let tHead = block.listLastNode!.next;
-    while (nodeIndex--) {
-      tHead = tHead.next;
-    }
-    return tHead.data;
+    return this._getNode(index).data;
   }
 
   /**
@@ -480,5 +484,16 @@ export class UnrolledLinkedlist<T> {
 
       bHead = bHead.next;
     } while (bHead !== this.lastBlock.next);
+  }
+
+  /**
+   * replaces the element at the specified index.
+   *
+   * @param index - The index of the element to be replace.
+   * @param data  - The new data to be updated
+   *
+   */
+  replace(index: number, data: T) {
+    this._getNode(index).data = data;
   }
 }

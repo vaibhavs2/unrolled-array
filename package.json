@@ -1,6 +1,6 @@
 {
   "name": "unrolled-array",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript implementation of an unrolled linked list for efficient memory and fast insert/delete operations.",
   "main": "dist/cjs/unrolled-linkedlist.js",
   "module": "dist/esm/unrolled-linkedlist.js",
@@ -30,21 +30,23 @@
   ],
   "keywords": [
     "typescript",
-    "unrolled linked list",
+    "unrolled linkedlist",
     "data structure",
-    "linked list",
+    "linkedlist",
     "efficient memory management",
     "fast operation",
     "block list",
-    "array",
+    "fast array",
     "dynamic array",
     "fast insert",
-    "fast deletion"
+    "fast deletion",
+    "unrolled-array"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vaibhavs2/unrolled-array.git"
   },
   "author": "vaibhavs2",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@3.6.1+sha512.de524adec81a6c3d7a26d936d439d2832e351cdfc5728f9d91f3fc85dd20b04391c038e9b4ecab11cae2b0dd9f0d55fd355af766bc5c1a7f8d25d96bb2a0b2ca"
 }

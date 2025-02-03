@@ -292,3 +292,18 @@ describe("Constructor with array", () => {
     });
   });
 });
+
+describe("Replace data", () => {
+  const list = new UnrolledLinkedlist(5);
+  for (let i = 0; i < 25; i++) {
+    list.push(i);
+  }
+
+  for (let i = 0; i < 25; i++) {
+    list.replace(i, 25 - i);
+  }
+
+  for (let i = 0; i < 25; i++) {
+    expect(list.get(i)).toBe(25 - i);
+  }
+});
